@@ -1,4 +1,8 @@
 /// <reference types = "Cypress" />
+
+//Invoke - Helps to modify the DOM
+//origin - Allows cross domain functionality
+
 describe("First test suite for Child Window", function () {
     it("First test case for Child Window", function () {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
@@ -10,10 +14,11 @@ describe("First test suite for Child Window", function () {
         // 
 
         {
+            //click on About us in new domain
             cy.get("#navbarSupportedContent a[href='about.html']").click()
             cy.get(".page-banner-cont h2").should("contain", "")
         })
-        //click on About us in new domain
+
 
 
 
