@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+
 
 // Picking the URL from DOM using Prop function of JQuery
 
