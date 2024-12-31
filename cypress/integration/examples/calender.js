@@ -12,12 +12,12 @@ describe("First test suite for Calender", function () {
         // })
         // cy.get(".cart-icon").click()
         // cy.get(".cart-preview .action-block button[type='button']").click()
-        cy.get("a[href='#/offers']").invoke("removeAttr","target").click()
-    
+        cy.get("a[href='#/offers']").invoke("removeAttr", "target").click()
+
         const date = "3"
         const month = "December"
         const year = "2025"
-        const expValue = ["12",date,year]
+        const expValue = ["12", date, year]
 
         cy.get(".react-date-picker__calendar-button").click()
         cy.get(".react-date-picker__calendar .react-calendar__navigation button[class='react-calendar__navigation__label']").click()
@@ -26,9 +26,8 @@ describe("First test suite for Calender", function () {
         cy.get(".react-calendar__year-view__months button").contains(month).click()
         cy.get(".react-calendar__month-view__days button").contains(date).click()
 
-        cy.get(".react-date-picker__inputGroup__input").each(($el,index)=>
-        {
-            cy.wrap($el).invoke("val").should("eq",expValue[index])
+        cy.get(".react-date-picker__inputGroup__input").each(($el, index) => {
+            cy.wrap($el).invoke("val").should("eq", expValue[index])
         })
     })
 })
