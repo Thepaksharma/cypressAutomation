@@ -1,32 +1,25 @@
+import loginPage from "../../support/pageObjects/loginPage"
+import productPage from "../../support/pageObjects/productPage"
+
+
 describe("First end to end framework", function () {
+
+    //hooks - Before section will be excuted everytime before running any it section
+    before(function () {
+        cy.fixture('example').then(function (data) {  //converting fixture data into javascript object and passing it through the function
+            this.data = data
+        })
+    })
     it("First test case for End to End framework", function () {
-        cy.visit("https://rahulshettyacademy.com/loginpagePractise/")
-        cy.get("#username").type("rahulshettyacademy")
-        cy.get("#password").type("learning")
-        cy.get("#signInBtn").click()
-        cy.get(".col-lg-9 [class='row'] app-card").each(($el, index, $list) => {
-            const deviceName = $el.text()
-            if (deviceName.includes("Nokia Edge")) {
-                cy.get(".btn-info").eq(index).click() //here we have used the index number for item selection
-            }
-        })
-
-        cy.get(".btn-primary").click()
-        cy.get("h4[class='media-heading']").contains("Nokia Edge")
-        cy.get("#exampleInputEmail1").should("have.value", "1")
-        cy.get(".text-right").contains("65000")
-        cy.get(".btn-success").click()
-        cy.get("#country").type("In")
-        cy.wait(5000)
-        cy.get(".suggestions ul").each(($el, index, $list) => {
-            const Country = $el.text()
-            if (Country.includes("India")) {
-                cy.wrap($el).click()
-            }
-        })
-        cy.get("label[for='checkbox2']").click()
-        cy.get(".btn-success").click()
-        cy.get(".alert-success").contains("Success! Thank you! Your order will be delivered in next few weeks")
-
+        Cypress.config('defaultCommandTimeout', 10000) //wait time will be 10s for entire test in it
+        const lgnPage = new loginPage()
+        lgnPage.goToURL("https://rahulshettyacademy.com/loginpagePractise/")
+        cy.log(this.data.username)      //to log anything in the console
+        const productpage = lgnPage.submitDetails(this.data.username, this.data.password)
+        productpage.selectProduct()
+       // cy.pause() to pause an execution
+        const cartpage = productpage.selectCheckout()
+        const checkoutpage = cartpage.verifyValues()
+        checkoutpage.checkoutItem()
     })
 })
