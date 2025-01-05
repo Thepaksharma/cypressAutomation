@@ -11,6 +11,7 @@ class checkoutPage {
         // cy.get("label[for='checkbox2']").click()
         // cy.get(".btn-success").click()
         // cy.get(".alert-success").contains("Success! Thank you! Your order will be delivered in next few weeks")
+        
         cy.checkoutItem()  //Cypress commands functionality used for reusable menthods - find defined code under support->cammands
     }
 }

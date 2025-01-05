@@ -23,7 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('checkoutItem', () => {
+
+Cypress.Commands.add('checkoutItem', () => { //below method from checkoutPage.js
     cy.get("#country").type("In")
         cy.wait(5000)       //wait will be 5s only for the below line of code
         cy.get(".suggestions ul").each(($el, index, $list) => {
@@ -37,3 +38,4 @@ Cypress.Commands.add('checkoutItem', () => {
         cy.get(".alert-success").contains("Success! Thank you! Your order will be delivered in next few weeks")
 
 })
+
