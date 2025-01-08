@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "runHeaded": "npx cypress run --headed",
+    "RunOnChrome": "npx cypress run --browser chrome",
+    "runOnCloud": "npx cypress run --record --key 3f6bafce-0072-4337-9e02-aedacd012e97",
+    "runEndToEndTest": "npx cypress run --spec \"cypress/integration/examples/EndtoEndFramework.js\" --headed --browser chrome"
   },
   "author": "",
   "license": "ISC",
