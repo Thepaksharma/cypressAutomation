@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-09T00:50:39.914Z",
+    "end": "2025-01-09T00:50:54.657Z",
+    "duration": 14743,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "71013935-faff-45e5-9ee3-bc0161a04284",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\EndtoEndFramework.js",
+      "file": "cypress\\integration\\examples\\EndtoEndFramework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9faf9402-1023-4718-b6a4-f05b75618db2",
+          "title": "First end to end framework",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "First test case for End to End framework",
+              "fullTitle": "First end to end framework First test case for End to End framework",
+              "timedOut": null,
+              "duration": 11790,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\EndtoEndFramework.js\"\n}",
+              "code": "Cypress.config('defaultCommandTimeout', 10000); //wait time will be 10s for entire test in it\nthis.lgnPage.goToURL(Cypress.env('url')); //passsing URL by env variable - defiend in config file\ncy.log(this.data.username); //to log anything in the console\nvar productpage = this.lgnPage.submitDetails(this.data.username, this.data.password);\nproductpage.selectProduct();\n// cy.pause() to pause an execution\nvar cartpage = productpage.selectCheckout();\ncartpage.getHeaderName().should('contain', \"Nokia Edge\");\ncartpage.getQuantity().should(\"have.length\", 1);\ncartpage.getAmount().should(\"contain\", 65000);\nvar checkoutpage = cartpage.clickSuccessBtn();\ncheckoutpage.checkoutItem();",
+              "err": {},
+              "uuid": "9c73a9c2-0114-4064-8511-0ae8368c8acf",
+              "parentUUID": "9faf9402-1023-4718-b6a4-f05b75618db2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9c73a9c2-0114-4064-8511-0ae8368c8acf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11790,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

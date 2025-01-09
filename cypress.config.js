@@ -1,4 +1,27 @@
 const { defineConfig } = require("cypress");
+const browserify = require("@cypress/browserify-preprocessor");
+const {
+  addCucumberPreprocessorPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor");
+const {
+  preprendTransformerToOptions,
+} = require("@badeball/cypress-cucumber-preprocessor/browserify");
+
+
+async function setupNodeEvents(on, config) {
+  // implement node event listeners here
+  require('cypress-mochawesome-reporter/plugin')(on); //Created a mochawesome-reporter listener
+
+  await addCucumberPreprocessorPlugin(on, config);
+
+  on(
+    "file:preprocessor",
+    browserify(preprendTransformerToOptions(config, browserify.defaultOptions)),
+  );
+
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config;
+}
 
 module.exports = defineConfig({
 
@@ -9,13 +32,10 @@ module.exports = defineConfig({
 
   },
   projectId: "rosigg",  //Project id fpr the cloud report genration
-  retries: 1, //Reattempts the failes Spec
+  retries: 0, //Reattempts the failes Spec
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-      require('cypress-mochawesome-reporter/plugin')(on); //Created a mochawesome-reporter listener
-    },
+    setupNodeEvents,
     specPattern: 'cypress/integration/examples/*.js'
   },
 });
