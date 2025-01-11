@@ -1,0 +1,244 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "\"ecoomerce-website-end-to-end-verification\";to-test-the-ecommerce-end-to-end-verofication",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "To test the Ecommerce End to end verofication",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "User visits the Ecommerce Page",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:5"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "User submits the Username and Password",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:10"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "User click on the add product button",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:15"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "User clicks on the checkout button",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "User verifies the details on the Checkout Page",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:23"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "User clicks on the Success button",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:29"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "User checksout the product and verifies the Thank You message",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:33"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "\"ecoomerce-website-end-to-end-verification\";to-test-the-ecommerce-end-to-end-verofication-with-cucumber-parametrisation",
+        "keyword": "Scenario Outline",
+        "line": 16,
+        "name": "To test the Ecommerce End to end verofication with cucumber parametrisation",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "User visits the Ecommerce Page",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1172000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "userName",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "rahulshettyacademy",
+                      "learning"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 19,
+            "name": "User submits the Username and Password with parameters",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 821000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 22,
+            "name": "User click on the add product button",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4881000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "User clicks on the checkout button",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "User verifies the details on the Checkout Page",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 109000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "User clicks on the Success button",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 166000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "User checksout the product and verifies the Thank You message",
+            "match": {
+              "location": "cypress/integration/examples/BDD/ecommerce/eCommerceStep.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5734000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 15
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "\"ecoomerce-website-end-to-end-verification\"",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "\"Ecoomerce website end to end verification\"",
+    "tags": [],
+    "uri": "cypress\\integration\\examples\\BDD\\ecommerce.feature"
+  }
+]

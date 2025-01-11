@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 2,
+    "failures": -1,
+    "start": "2025-01-11T22:43:42.379Z",
+    "end": "2025-01-11T22:43:42.472Z",
+    "duration": 93,
+    "testsRegistered": 2,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d06c0ab5-272a-4a36-b598-337508ff9a40",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\BDD\\ecommerce.feature",
+      "file": "cypress\\integration\\examples\\BDD\\ecommerce.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e2c9665c-41e6-48bd-8baf-254c1ef28698",
+          "title": "\"Ecoomerce website end to end verification\"",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "To test the Ecommerce End to end verofication",
+              "fullTitle": "\"Ecoomerce website end to end verification\" To test the Ecommerce End to end verofication",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\BDD\\\\ecommerce.feature\"\n}",
+              "code": "",
+              "err": {},
+              "uuid": "4e3b73a1-1893-4fe4-ad5a-b731eb34d25b",
+              "parentUUID": "e2c9665c-41e6-48bd-8baf-254c1ef28698",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "To test the Ecommerce End to end verofication with cucumber parametrisation",
+              "fullTitle": "\"Ecoomerce website end to end verification\" To test the Ecommerce End to end verofication with cucumber parametrisation",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\BDD\\\\ecommerce.feature\"\n}",
+              "code": "",
+              "err": {},
+              "uuid": "022f2369-b09c-4443-a932-2fa6d4ad0977",
+              "parentUUID": "e2c9665c-41e6-48bd-8baf-254c1ef28698",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "4e3b73a1-1893-4fe4-ad5a-b731eb34d25b",
+            "022f2369-b09c-4443-a932-2fa6d4ad0977"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

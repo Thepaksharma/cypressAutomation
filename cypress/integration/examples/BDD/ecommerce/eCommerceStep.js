@@ -2,7 +2,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import loginPage from "../../../../support/pageObjects/loginPage";
 
 
-Given("User visits the Ecommerce Page", function() {
+Given("User visits the Ecommerce Page", function () {
     this.lgnPage = new loginPage()
     this.lgnPage.goToURL(Cypress.env('url'))
 })
@@ -32,4 +32,10 @@ When("User clicks on the Success button", function () {
 
 Then("User checksout the product and verifies the Thank You message", function () {
     this.checkoutpage.checkoutItem()
+})
+
+// Parametrisation for data
+When("User submits the Username and Password with parameters",function(dataTable)
+{
+    this.productpage = this.lgnPage.submitDetails(dataTable.rawTable[1][0],dataTable.rawTable[1][1])
 })
