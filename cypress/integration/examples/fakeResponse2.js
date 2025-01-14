@@ -29,5 +29,7 @@ describe("Fake Response 2", function () {
 })
 
 
-//Mocking Response 
+//Mocking Response - Single Response
 //Verifying response lenth and UI table length - To be sure same amount of details are being displayed on UI = Network
+//Mocking request URL - interceptURL.js
+//Request posting
