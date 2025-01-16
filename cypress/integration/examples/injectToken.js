@@ -1,5 +1,8 @@
+const neatCSV = require("neat-csv")
+let productNameClicked
+
 describe("First Inject token test case", function () {
-    it("First Inject test case for token", function () {
+    it("First Inject test case for token", async function () {
 
         cy.LoginAPI().then(function () {
             cy.visit("https://rahulshettyacademy.com/client",
@@ -9,7 +12,9 @@ describe("First Inject token test case", function () {
                     }
                 })
         })
-
+        cy.get(".card-body b").eq(1).then(function (ele) {
+           productNameClicked= ele.text();
+        })
         cy.get(".w-10").eq(1).click()
         cy.get("[routerlink*='cart']").click()
         cy.contains("Checkout").click()
@@ -22,6 +27,19 @@ describe("First Inject token test case", function () {
         cy.get(".action__submit").click()
         cy.wait(2000)
         cy.contains("Click To Download Order Details in CSV").click()
+
+        //CSV -> text conversion -> JS object
+        //Await and .then - Asynchronous
+        cy.readFile(Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_deepsharma0312.csv").then(async function (text) {
+            const csv = await neatCSV(text)
+            console.log(csv)
+            const productName = csv[0]["Product Name"]
+            console.log(productName)
+            console.log(productNameClicked)
+            expect(productName).to.equal(productNameClicked)
+
+        })
+
 
     })
 })
