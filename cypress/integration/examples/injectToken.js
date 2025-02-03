@@ -4,6 +4,8 @@ let productNameClicked
 describe("First Inject token test case", function () {
     it("First Inject test case for token", async function () {
 
+
+        //Under commands find below LoginAPI()
         cy.LoginAPI().then(function () {
             cy.visit("https://rahulshettyacademy.com/client",
                 {

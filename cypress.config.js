@@ -7,10 +7,24 @@ const {
   preprendTransformerToOptions,
 } = require("@badeball/cypress-cucumber-preprocessor/browserify");
 
+//For Excel To JSON Conversion
+const excelToJson = require('convert-excel-to-json');
+const fs = require('fs');
 
 async function setupNodeEvents(on, config) {
   // implement node event listeners here
   require('cypress-mochawesome-reporter/plugin')(on); //Created a mochawesome-reporter listener
+
+  //Task for Excel to JSON Conversion
+  on('task', {
+    ExcelToJSONConvertor(filePath) {
+      const result = excelToJson({
+        source: fs.readFileSync(filePath)
+      }
+      )
+      return result
+    }
+  })
 
   await addCucumberPreprocessorPlugin(on, config);
 
@@ -21,9 +35,13 @@ async function setupNodeEvents(on, config) {
 
   // Make sure to return the config object as it might have been modified by the plugin.
   return config;
+
+
 }
 
 module.exports = defineConfig({
+
+
 
   video: true, //Video recoding will be a default now
   defaultCommandTimeout: 6000,
@@ -37,7 +55,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
     specPattern: 'cypress/integration/examples/*.js'
-    
+
   },
 });
 
