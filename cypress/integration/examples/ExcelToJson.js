@@ -41,7 +41,7 @@ describe("First Inject token test case", function () {
 
 
         //readFile function can be used to scan the full file after converting into text format - Only content can be validated not the position
-        cy.readFile(filePath).then(function (text) {
+        cy.readFile(filePath).then(function (text) { //Coverting into text
             expect(text).to.include(productNameClicked)
         })
 
