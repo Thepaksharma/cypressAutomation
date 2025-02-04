@@ -35,8 +35,7 @@ describe("First Inject token test case", function () {
 
 
         const filePath = Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_deepsharma0312.xlsx"
-        cy.task('ExcelToJSONConvertor', filePath).then(function (result) {
-            cy.log(result.data[1].B)
+        cy.task('ExcelToJSONConvertor', filePath).then(function (result) { //Task will be called here with its name and filepath - > Config
             expect(productNameClicked).to.equal(result.data[1].B)
         })
 

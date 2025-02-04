@@ -16,15 +16,21 @@ async function setupNodeEvents(on, config) {
   require('cypress-mochawesome-reporter/plugin')(on); //Created a mochawesome-reporter listener
 
   //Task for Excel to JSON Conversion
-  on('task', {
-    ExcelToJSONConvertor(filePath) {
-      const result = excelToJson({
-        source: fs.readFileSync(filePath)
+  on('task',
+    {
+      ExcelToJSONConvertor(filePath)  //Task Name
+      {
+        //Below code is copied from https://www.npmjs.com/package/convert-excel-to-json
+        const result = excelToJson({
+          source: fs.readFileSync(filePath) // fs.readFileSync return a Buffer
+          // NOTE - The `fs` module is part of Node.js and is used for file system operations. However, you cannot use it directly in the frontend because it runs on the server. To work with `fs` in the frontend, we put the code inside specific tasks. This lets us perform file operations using Node.js while still using a JavaScript engine in the browser.
+        });
+        return result //Returns the result - Data in JS Format
       }
-      )
-      return result
     }
-  })
+  )
+
+
 
   await addCucumberPreprocessorPlugin(on, config);
 
